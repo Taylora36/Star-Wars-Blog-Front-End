@@ -11,6 +11,7 @@ import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer";
 import { PlanetDetails } from "./component/planet-details";
 import { CharacterDetails } from "./component/character-details.jsx";
+import { VehicleDetails } from "./component/vehicle-details.jsx";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,7 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<PlanetDetails />} path="/planets/:id" />
                         <Route element={<CharacterDetails />} path="/people/:id" />
+                        <Route element={<VehicleDetails />} path="/vehicles/:id" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>

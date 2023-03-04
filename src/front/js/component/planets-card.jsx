@@ -9,7 +9,7 @@ export const Planets = (props) =>{
       
     return(
         <div className="row">
-        <div className="card mx-3" style={style}>
+        <div className="card mx-3 g-5" style={style}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0emOxME-j9NzQQM75_CROCp4e-Fvvp99nomDVi7PAf_CAn1YJA8CiiEiCxQDZih3XbEw&usqp=CAU"
                 className="card-img-top p-3"

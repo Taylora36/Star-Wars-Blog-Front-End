@@ -1,28 +1,29 @@
 import React, { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Characters } from "../component/characters-card.jsx";
 import { Planets } from "../component/planets-card.jsx";
+import { Vehicles } from "../component/vehicles-card.jsx";
 import "../../styles/home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-//import {getState} from ".store/flux.js";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-  // Call useEffect hook on what we need, in this case we need to fetch people. We already set up our fetch in flux.js so we just call the action.methodName for what we need.
-  // This method allows us to pass in any key value inside of our card where it's needed e.g. hair, eyes, name, DOB etc. etc.
+  const { id } = useParams();
+  
   useEffect(() => {
     actions.getPeople();
-  }, []); // Notice how there's no default empty array here. We don't need it because then it would be infinite loading
+  }, []); 
+  
   useEffect(() => {
     actions.getPlanets();
   }, []);
 
-  const addToFavorites = (item) => {
-    store.planetsFavorites.push(item);
-    console.log(store.planetsFavorites);
-  };
+  useEffect(() => {
+    actions.getVehicles();
+  }, []);
 
   return (
     <div className="container">
@@ -30,7 +31,7 @@ export const Home = () => {
         <h1 id="heading">Characters</h1>
       </div>
 
-      <div className="album py-5 bg-light d-flex justify-content-center">
+      <div className="album py-5 d-flex justify-content-center" id="card">
         <div className="container">
           <div className="d-flex justify-content-between row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {store.people.map((elem, idx) => {
@@ -46,13 +47,17 @@ export const Home = () => {
                     </li>
                   </ul>
                   <div className="d-flex justify-content-between">
-                  <Link
-                        to={"/people/"+(idx+1)}
-                        className="btn btn-outline-primary"
-                      >
+                    <Link
+                      to={"/people/" + (idx + 1)}
+                      className="btn btn-outline-primary"
+                    >
                       Go somewhere
                     </Link>
-                    <a href="#" class="btn btn-outline-warning">
+                    <a
+                      onClick={() => actions.addToFavorites(elem.name)}
+                      href="#"
+                      class="btn btn-outline-warning"
+                    >
                       <FontAwesomeIcon icon={faHeart} />
                     </a>
                   </div>
@@ -68,7 +73,7 @@ export const Home = () => {
           <h1 id="heading">Planets</h1>
         </div>
 
-        <div className="album py-5 bg-light d-flex justify-content-center">
+        <div className="album py-5 d-flex justify-content-center">
           <div className="container">
             <div className="d-flex justify-content-between row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {store.planets.map((elem, idx) => {
@@ -82,20 +87,51 @@ export const Home = () => {
                         Terrain: {elem.terrain}
                       </li>
                     </ul>
-                    
+
                     <div className="d-flex justify-content-between">
-                    {/* //Fix this to make it make sense */}
+                      {/* //Fix this to make it make sense */}
                       <Link
-                        to={"/planets/"+(idx+1)}
+                        to={"/planets/" + (idx + 1)}
                         className="btn btn-outline-primary"
                       >
                         Go somewhere
                       </Link>
-                      {/* <button href="#" class="btn btn-outline-warning" onClick={() => {addToFavorites(Planets)}}><PlanetDetailsButton/>
-                    <FontAwesomeIcon icon={faHeart} />
-                  </button> */}
+                      <a
+                        onClick={() => actions.addToFavorites(elem.name)}
+                        href="#"
+                        class="btn btn-outline-warning"
+                      >
+                        <FontAwesomeIcon icon={faHeart} />
+                      </a>
                     </div>
                   </Planets>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <h1 id="heading">Vehicles</h1>
+        </div>
+
+        <div className="album py-5 d-flex justify-content-center">
+          <div className="container">
+            <div className="d-flex justify-content-between row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              {store.vehicles.map((elem, idx) => {
+                return (
+                  <div key={idx}>
+                    <Vehicles
+                      key={idx}
+                      name={elem.name}
+                      model={elem.model}
+                      manufacturer={elem.manufacturer}
+                      cost_in_credits={elem.cost_in_credits}
+                      id={idx + 4}
+                    />
+                  </div>
                 );
               })}
             </div>
