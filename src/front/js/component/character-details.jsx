@@ -26,20 +26,20 @@ export const CharacterDetails = () => {
         {name}
       </h1>
       <div className="container">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZejyCaDBLQCGEBr4GXHjNux_3Sm3EataOg&usqp=CAU"
+                src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2022/03/grogu-star-wars.jpeg"
                 id="grogu"
                 class="img-fluid rounded-start"
                 alt="..."
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h3 class="card-title">About This Character</h3>
-                <p class="card-text">
+            <div className="col-md-8">
+              <div className="card-body">
+                <h3 className="card-title">About This Character</h3>
+                <p className="card-text">
                   Below is a list of further information about this Star Wars
                   character.
                 </p>

@@ -32,9 +32,9 @@ export const PlanetDetails = () => {
           <div className="row g-0">
             <div className="col-md-4">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiFu-Yjsu5o_TjTiYR1eTelivAUweElAP7UQ&usqp=CAU"
+                src="https://virtualbackgrounds.site/wp-content/uploads/2020/07/star-wars-the-lars-homestead-at-tatooine.jpg"
                 id="planet"
-                class="img-fluid rounded-start"
+                className="img-fluid rounded-start"
                 alt="..."
               />
             </div>
@@ -46,8 +46,7 @@ export const PlanetDetails = () => {
                   marked at {gravity}.
                   <br />
                   <br />
-                  The climate on {name} is {climate} with a {terrain} terrain,
-                  so plan ahead on what to pack. Other key details include the
+                  The climate on {name} is {climate} with a {terrain} terrain. Other key details include the
                   following: a population of {population}, an orbital period of{" "}
                   {orbitalPeriod}, and a rotation period of {rotationPeriod}.
                 </p>

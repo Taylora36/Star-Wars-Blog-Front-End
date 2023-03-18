@@ -31,8 +31,8 @@ export const VehicleDetails = () => {
           <div className="row g-0">
             <div className="col-md-4">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiFu-Yjsu5o_TjTiYR1eTelivAUweElAP7UQ&usqp=CAU"
-                id="planet"
+                src="https://www.cnet.com/a/img/resize/8364177c9fdeddb3a35b8434a164b6f29619bd93/hub/2015/02/05/11b50968-7eef-47da-a344-33ebe0d18be0/star-wars-vehicles-at-at.jpg?auto=webp&width=1200"
+                id="vehicle"
                 className="img-fluid rounded-start"
                 alt="..."
               />
@@ -45,17 +45,17 @@ export const VehicleDetails = () => {
                   at {store.singleVehicle.manufacturer}.
                   <br />
                   <br />
-                  1{store.singleVehicle.cost_in_credits}
+                  <strong>Cost in Credits: </strong>{store.singleVehicle.cost_in_credits}
                   <br />
-                  2{store.singleVehicle.length}
+                  <strong>Length: </strong>{store.singleVehicle.length}
                   <br />
-                  3{store.singleVehicle.crew}
+                  <strong>Crew: </strong>{store.singleVehicle.crew}
                   <br />
-                  4{store.singleVehicle.passengers}
+                  <strong>Passengers: </strong>{store.singleVehicle.passengers}
                   <br />
-                  5{store.singleVehicle.cargo_capacity}
+                  <strong>Cargo Capacity: </strong>{store.singleVehicle.cargo_capacity}
                   <br />
-                  6{store.singleVehicle.vehicle_class}
+                  <strong>Vehicle Class: </strong>{store.singleVehicle.vehicle_class}
                 </p>
               </div>
             </div>

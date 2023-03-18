@@ -25,9 +25,8 @@ body {
     object-fit: cover;
 }
 #grogu{
-  width: 300px;
-  height: 280px;
-  object-fit: cover; 
+  height: 100%;
+  object-fit:cover; 
 }
 #planet{
   width: 330px;
@@ -42,5 +41,5 @@ nav{
   margin-bottom:10px;
 }
 #vehicle{
-  height:250px;
+  height:100%;
 }

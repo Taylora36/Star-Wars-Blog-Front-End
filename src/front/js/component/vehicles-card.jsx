@@ -14,7 +14,7 @@ export const Vehicles = (props) => {
     <div className="col">
       <div className="card shadow my-3">
         <img
-          src="https://lumiere-a.akamaihd.net/v1/images/omega-s2-a-main_0216f1de.jpeg?region=280%2C0%2C720%2C720"
+          src="https://i.ytimg.com/vi/I6AZLlA2j18/maxresdefault.jpg"
           className="card-img-top"
           alt="..."
         />
